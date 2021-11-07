@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title> Achats en ligne à EFREI ! </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1 class="titre"><b>E'SHOP</b></h1>
+      </header>
+      <main>
+        <router-view
+          :products="products"
+          :cart="cart"
+          :inventory="inventory"
+          @put-in-cart="putInCart"
+          @remove-from-cart="removeFromCart"
+          @remove-from-inventory="removeFromInventory"
+          @pay="pay">
+        </router-view>
+      </main>
+    </div>
+    <script src="/vue-app.js">
+    </script>
+    <div class="footer">
+      <p>Cofondé par <strong style="color: #82D7DD;">WEI Lihao</strong> et <strong style="color: #82D7DD;">Habib Abdoul Koudous OUATTARA</strong></p>
+      <p>Le droit final d'interprétation appartient à <strong style="color: #82D7DD;">l'EFREI</strong>. - 20/10/2021 -</p>
+    </div>
+  </body>
+</html>
+<style>
+  * {
+    font-family:Tahoma;
+  }
+
+  .titre{
+    height: 50px;
+    margin: 16px 0 8px 0;
+    color: #343434;
+    font-weight: normal;
+    font-family: 'Ultra', sans-serif;   
+    font-size: 36px;
+    line-height: 42px;
+    text-transform: uppercase;
+    text-shadow: 0 2px white, 0 3px #777;
+    text-align: center;
+  }
+
+  .footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 85px;
+    background: #4CAF50;
+    text-align: center;
+  }
+</style>
